@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+    <title>Scan QR code</title>
+</head>
+<body>
+    <!-- <form action="/" method="post" enctype="multipart/form-data">
+        <input type="file" id="qr" name="image">
+        <input type="submit">
+    </form>
+    {% if data %}
+            <h1>{{ data }}</h1>
+    {% endif %} -->
+    <div class="container">
+        <header>
+            <h1>QR Code Scanner</h1>
+        </header>
+        <main>
+            <form action="/" method="post" enctype="multipart/form-data">
+                <label for="qr">Upload QR Code Image</label>
+                <input type="file" id="qr" name="image" accept="image/*">
+                <input type="submit" value="Scan">
+            </form>
+            {% if data %}
+                <div class="result">
+                    <h2>Scanned Data:</h2>
+                    <p>{{ data }}</p>
+                </div>
+            {% endif %}
+        </main>
+        <footer>
+            <a href="https://github.com/subhankhan786"> Get The Code Subhan Khan</a>
+        </footer>
+    </div>
+</body>
+</html>
